@@ -1,18 +1,19 @@
 # Simurg PTP Dark CSS Test
 
-A standalone, local-only stylesheet that gives the Simurg forum a PTP-inspired dark appearance while preserving Simurg content and branding. The first forum topic-status column is hidden, so PTP-style read/unread topic identifiers are not shown.
+A standalone external stylesheet that gives Simurg a PTP-inspired dark appearance while preserving Simurg content and branding. Its desktop header now uses a RED-inspired utility bar with a left tools menu, centered transfer statistics, compact action shortcuts, and an account dropdown. The first forum topic-status column remains hidden, so PTP-style read/unread topic identifiers are not shown.
 
 ## Use
 
 Use this stable external stylesheet address:
 
 ```text
-https://raw.githack.com/erkcet/simurg-ptp-dark-css-test/main/simurg-ptp-dark-local-test.css
+https://cdn.jsdelivr.net/gh/erkcet/simurg-ptp-dark-css-test@main/simurg-ptp-dark-local-test.css
 ```
 
-Load it with a browser user-style extension or Safari stylesheet tool, and
-apply it only to the Simurg domain. The address follows the repository's
-`main` branch, so it does not need to change when the stylesheet is updated.
+Load it with Simurg's External stylesheet URL setting, a browser user-style
+extension, or Safari's stylesheet tool, and apply it only to the Simurg
+domain. The address follows the repository's `main` branch, so it stays the
+same when the stylesheet is updated.
 
 ## Safety
 
