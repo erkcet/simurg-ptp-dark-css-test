@@ -5116,6 +5116,48 @@ textarea {
   width: auto;
 }
 
+/*
+ * Match PTP's profile composition: profile content on the left and identity
+ * details, including the avatar, in a fixed-width sidebar on the right.
+ */
+#user #content > .thin:last-child {
+  align-items: start;
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  margin: 0;
+  width: 100%;
+}
+
+#user #content > .thin:last-child > .header,
+#user #content > .thin:last-child > .linkbox {
+  grid-column: 1 / -1;
+}
+
+#user #content > .thin:last-child > .sidebar {
+  float: none;
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+  order: initial;
+  width: 240px;
+}
+
+#user #content > .thin:last-child > .main_column {
+  grid-column: 1;
+  grid-row: 3;
+  margin: 0;
+  min-width: 0;
+  width: auto;
+}
+
+#user .box_image_avatar img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 150px;
+}
+
 #footer {
   color: #a4a4a4;
   font-size: 8pt;
