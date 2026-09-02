@@ -4578,10 +4578,10 @@ h6 {
 .site_name .site_logo {
   display: block;
   height: auto;
-  max-height: 104px;
-  max-width: 420px;
+  max-height: 80px;
+  max-width: 320px;
   padding: 0;
-  width: 420px;
+  width: 320px;
 }
 
 .site_name_short {
