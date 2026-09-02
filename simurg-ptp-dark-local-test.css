@@ -5209,6 +5209,194 @@ textarea {
   margin: 0;
 }
 
+/*
+ * Resilient desktop utility header.
+ *
+ * Keep every native Simurg link visible and in its original list. The header
+ * uses two static rows instead of hover-driven dropdowns, so pointer movement,
+ * keyboard focus, and page-specific theme rules cannot rearrange the layout.
+ */
+@media (min-width: 1014px) {
+  #header {
+    box-sizing: border-box;
+    min-height: 274px;
+    padding-top: 34px;
+  }
+
+  #userinfo {
+    align-items: center;
+    background: linear-gradient(to bottom, #25272a 0%, #111214 100%);
+    border-bottom: 1px solid #494b4e;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:
+      "major stats account"
+      "tools tools tools";
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-rows: 29px 27px;
+    height: 56px;
+    left: 0;
+    padding: 0 14px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  #userinfo #userinfo_major,
+  #userinfo #userinfo_stats,
+  #userinfo #userinfo_username,
+  #userinfo #userinfo_minor {
+    align-items: center;
+    background: transparent;
+    border-radius: 0;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 10px;
+    gap: 2px;
+    height: 100%;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    position: static;
+    width: auto;
+  }
+
+  #userinfo #userinfo_major {
+    grid-area: major;
+    justify-self: start;
+  }
+
+  #userinfo #userinfo_stats {
+    grid-area: stats;
+    justify-self: center;
+  }
+
+  #userinfo #userinfo_username {
+    grid-area: account;
+    justify-self: end;
+  }
+
+  #userinfo #userinfo_minor {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    grid-area: tools;
+    justify-content: center;
+    justify-self: stretch;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  #userinfo #userinfo_major > li,
+  #userinfo #userinfo_stats > li,
+  #userinfo #userinfo_username > li,
+  #userinfo #userinfo_minor > li {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    display: inline-flex;
+    flex: 0 0 auto;
+    height: 100%;
+    line-height: 1;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    pointer-events: auto;
+    position: static;
+    transform: none;
+    width: auto;
+  }
+
+  #userinfo #userinfo_major > li > a,
+  #userinfo #userinfo_stats > li > a,
+  #userinfo #userinfo_username > li > a,
+  #userinfo #userinfo_minor > li > a {
+    align-items: center;
+    background: transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #c5c5c5;
+    display: inline-flex;
+    font-size: 10px;
+    height: 22px;
+    line-height: 22px;
+    padding: 0 6px;
+    text-decoration: none;
+    width: auto;
+  }
+
+  #userinfo #userinfo_major > li > a:hover,
+  #userinfo #userinfo_stats > li > a:hover,
+  #userinfo #userinfo_username > li > a:hover,
+  #userinfo #userinfo_minor > li > a:hover,
+  #userinfo #userinfo_major > li > a:focus-visible,
+  #userinfo #userinfo_stats > li > a:focus-visible,
+  #userinfo #userinfo_username > li > a:focus-visible,
+  #userinfo #userinfo_minor > li > a:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    outline: 1px solid #f07c8e;
+    outline-offset: -1px;
+  }
+
+  #userinfo #userinfo_username > #nav_userinfo > a {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-weight: 700;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #userinfo #userinfo_stats > li {
+    color: #aaa;
+    padding: 0 5px;
+  }
+
+  #userinfo #userinfo_stats .stat {
+    color: #e2e2e2;
+    margin-left: 3px;
+  }
+
+  #userinfo #userinfo_username > #nav_userclass,
+  #userinfo #userinfo_minor::before,
+  #userinfo #userinfo_minor #nav_userinfo,
+  #userinfo #userinfo_minor #nav_useredit,
+  #userinfo #userinfo_minor #nav_logout,
+  #userinfo #userinfo_minor > .mobile-menu-only {
+    display: none;
+  }
+
+  /* Never let the selected theme restore its expanding hover menus. */
+  #userinfo #userinfo_username:hover,
+  #userinfo #userinfo_minor:hover,
+  #userinfo #userinfo_username:focus-within,
+  #userinfo #userinfo_minor:focus-within {
+    background: transparent;
+    border-radius: 0;
+    position: static;
+    right: auto;
+    z-index: auto;
+  }
+
+  /* Preserve spacing at the narrowest desktop width without shrinking text. */
+  @media (max-width: 1180px) {
+    #userinfo {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+
+    #userinfo #userinfo_major > li > a,
+    #userinfo #userinfo_stats > li > a,
+    #userinfo #userinfo_username > li > a,
+    #userinfo #userinfo_minor > li > a {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+}
+
 /* Keep the experiment usable on smaller screens without changing markup. */
 @media (max-width: 1013px) {
   body,
