@@ -4548,7 +4548,9 @@ h6 {
 #header {
   display: block;
   min-height: 240px;
-  position: relative;
+  /* PTP leaves the header static so the absolute user bar is sized against
+     the viewport instead of the fixed-width content wrapper. */
+  position: static;
   width: 1013px;
 }
 
