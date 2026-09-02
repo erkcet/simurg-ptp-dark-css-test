@@ -5619,6 +5619,11 @@ textarea {
     top: 0;
   }
 
+  #userinfo #userinfo_username #nav_userinfo > a {
+    background: transparent;
+    color: #c2c5c6;
+  }
+
   #userinfo #userinfo_major > li {
     display: block;
     position: static;
