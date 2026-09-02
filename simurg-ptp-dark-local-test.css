@@ -5164,6 +5164,39 @@ textarea {
   max-width: 150px;
 }
 
+/*
+ * The Settings page shares body#user with profile pages, but its columns live
+ * inside #userform. Restore the full content width before laying out the form
+ * so the profile grid cannot squeeze the settings table or collapse its menu.
+ */
+#user #content > .thin:has(> #userform) {
+  display: block;
+}
+
+#user #userform {
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  width: 100%;
+}
+
+#user #userform > .settings_sidebar {
+  float: none;
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  position: relative;
+  width: 240px;
+}
+
+#user #userform > .main_column {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  min-width: 0;
+  width: auto;
+}
+
 #footer {
   color: #a4a4a4;
   font-size: 8pt;
@@ -5194,5 +5227,22 @@ textarea {
 
   #menu {
     max-width: calc(100% - 20px);
+  }
+
+  /* Stack the Settings columns after the desktop-specific grid override. */
+  #user #userform {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #user #userform > .settings_sidebar {
+    order: -1;
+    position: static;
+    width: 100%;
+  }
+
+  #user #userform #settings_sections {
+    position: static;
+    width: 100%;
   }
 }
