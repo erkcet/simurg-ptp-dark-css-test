@@ -4672,6 +4672,48 @@ h6 {
   margin-right: 2px;
 }
 
+/*
+ * Neutralize Apollostage's desktop hover-expansion behavior. The source
+ * stylesheet turns the username and minor-navigation links into block-level
+ * dropdown items on hover; that conflicts with this PTP-style single-row bar
+ * and causes the links to spill over the centered Simurg logo.
+ */
+#userinfo_username:hover,
+#userinfo_minor:hover {
+  background: transparent;
+  border-radius: 0;
+  position: static;
+  right: auto;
+  z-index: auto;
+}
+
+#userinfo_username:hover a,
+#userinfo_minor:hover a,
+#userinfo_username:focus-within a,
+#userinfo_minor:focus-within a {
+  background: transparent;
+  color: #bbb;
+  display: inline;
+  line-height: 20px;
+  padding: 0;
+  width: auto;
+}
+
+#userinfo_username:hover a:hover,
+#userinfo_minor:hover a:hover,
+#userinfo_username:focus-within a:hover,
+#userinfo_minor:focus-within a:hover {
+  background: transparent;
+  color: #bbb;
+  text-decoration: none;
+}
+
+#userinfo_minor:hover::before,
+#userinfo_minor:focus-within::before {
+  content: none;
+  display: none;
+}
+
 #menu {
   background: rgba(51, 51, 51, 0.75);
   border-radius: 10px;
