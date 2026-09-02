@@ -5613,15 +5613,28 @@ textarea {
   }
 
   #userinfo #userinfo_username {
+    background: transparent;
+    border-radius: 0;
     display: block;
     position: absolute;
     right: 10px;
     top: 0;
   }
 
+  #userinfo #userinfo_username:hover,
+  #userinfo #userinfo_username:focus-within {
+    background: #202426;
+    border-radius: 3px 3px 0 0;
+  }
+
   #userinfo #userinfo_username #nav_userinfo > a {
     background: transparent;
     color: #c2c5c6;
+  }
+
+  #userinfo #userinfo_username > #nav_userinfo {
+    background: transparent;
+    border: 0;
   }
 
   #userinfo #userinfo_major > li {
