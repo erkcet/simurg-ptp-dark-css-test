@@ -7,13 +7,13 @@ A standalone external stylesheet that gives Simurg a PTP-inspired dark appearanc
 Use this stable external stylesheet address:
 
 ```text
-https://cdn.jsdelivr.net/gh/erkcet/simurg-ptp-dark-css-test@main/simurg-ptp-dark-local-test.css
+https://raw.githack.com/erkcet/simurg-ptp-dark-css-test/refs/heads/main/simurg-ptp-dark-local-test.css
 ```
 
 Load it with Simurg's External stylesheet URL setting, a browser user-style
 extension, or Safari's stylesheet tool, and apply it only to the Simurg
-domain. The address follows the repository's `main` branch, so it stays the
-same when the stylesheet is updated.
+domain. The address follows the repository's `main` branch, uses a short CDN
+cache lifetime, and stays the same when the stylesheet is updated.
 
 ## Safety
 
