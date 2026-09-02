@@ -5219,8 +5219,24 @@ textarea {
 @media (min-width: 1014px) {
   #header {
     box-sizing: border-box;
-    min-height: 274px;
-    padding-top: 34px;
+    min-height: 220px;
+    padding-top: 56px;
+  }
+
+  /*
+   * Match the logo wrapper to the rendered logo height. This removes the
+   * unused space left by the original 124px wrapper without changing the
+   * logo itself or allowing it to overlap the 56px utility header.
+   */
+  #header > .site_name {
+    height: 70px;
+    margin: 0 auto 10px;
+    padding: 0;
+    top: 8px;
+  }
+
+  #header > .site_name > a {
+    height: 70px;
   }
 
   #userinfo {
