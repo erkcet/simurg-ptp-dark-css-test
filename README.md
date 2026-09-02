@@ -1,6 +1,6 @@
 # Simurg PTP Dark CSS Test
 
-A standalone external stylesheet that gives Simurg a PTP-inspired dark appearance while preserving Simurg content and branding. Its desktop header now uses a RED-inspired utility bar with a left tools menu, centered transfer statistics, compact action shortcuts, and an account dropdown. The first forum topic-status column remains hidden, so PTP-style read/unread topic identifiers are not shown.
+A standalone external stylesheet that gives Simurg a PTP-inspired dark appearance while preserving Simurg content and branding. The first forum topic-status column remains hidden, so PTP-style read/unread topic identifiers are not shown.
 
 ## Use
 
