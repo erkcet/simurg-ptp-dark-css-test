@@ -4941,6 +4941,12 @@ textarea {
   padding: 5px 19px;
 }
 
+/* Center the compact staff alert panel without moving the freeleech banner. */
+#alerts {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .alertbar {
   background: var(--ptp-row);
   border: 1px solid var(--ptp-line);
