@@ -5084,6 +5084,38 @@ textarea {
   margin-bottom: 0;
 }
 
+/*
+ * Preserve PTP's home-page dashboard proportions. Simurg already renders the
+ * sidebar and news stream as separate siblings; the generic compatibility
+ * rule above makes both siblings full-width, so we restore the two-column
+ * layout only on the index page and leave every other page untouched.
+ */
+#index #content > .thin:last-child {
+  align-items: start;
+  column-gap: 10px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  margin: 0;
+  width: 100%;
+}
+
+#index #content > .thin:last-child > .sidebar {
+  float: none;
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  order: initial;
+  width: 240px;
+}
+
+#index #content > .thin:last-child > .main_column {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  min-width: 0;
+  width: auto;
+}
+
 #footer {
   color: #a4a4a4;
   font-size: 8pt;
