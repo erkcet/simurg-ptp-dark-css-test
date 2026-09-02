@@ -1329,35 +1329,35 @@ table.box2 {
 }
 
 .read {
-  background: url("/static/svg/std/document-ccc.svg") center no-repeat;
+  background: url("https://simurg.world/static/svg/std/document-ccc.svg") center no-repeat;
 }
 
 .unread {
-  background: url("/static/svg/std/document-round-ccc.svg") center no-repeat;
+  background: url("https://simurg.world/static/svg/std/document-round-ccc.svg") center no-repeat;
 }
 
 .read_locked {
-  background: url("/static/svg/std/lock-ccc.svg") center no-repeat;
+  background: url("https://simurg.world/static/svg/std/lock-ccc.svg") center no-repeat;
 }
 
 .unread_locked {
-  background: url("/static/svg/std/lock-round-ccc.svg") center no-repeat;
+  background: url("https://simurg.world/static/svg/std/lock-round-ccc.svg") center no-repeat;
 }
 
 .read_sticky {
-  background: url("/static/svg/std/pin-ccc.svg") center no-repeat;
+  background: url("https://simurg.world/static/svg/std/pin-ccc.svg") center no-repeat;
 }
 
 .unread_sticky {
-  background: url("/static/svg/std/pin-round-ccc.svg") center no-repeat;
+  background: url("https://simurg.world/static/svg/std/pin-round-ccc.svg") center no-repeat;
 }
 
 .read_locked_sticky {
-  background: url("/static/svg/std/pin-and-lock-ccc.svg") center no-repeat;
+  background: url("https://simurg.world/static/svg/std/pin-and-lock-ccc.svg") center no-repeat;
 }
 
 .unread_locked_sticky {
-  background: url("/static/svg/std/pin-and-lock-round-ccc.svg") center no-repeat;
+  background: url("https://simurg.world/static/svg/std/pin-and-lock-round-ccc.svg") center no-repeat;
 }
 
 #footer {
@@ -2274,7 +2274,7 @@ body#collage .cats_music {
   }
   /* main logo during desktop view */
   #logo a {
-    background: url("/static/svg/site/ops-logo-lockup-darkmode.svg") right no-repeat;
+    background: url("https://simurg.world/static/svg/site/ops-logo-lockup-darkmode.svg") right no-repeat;
   }
   #logo > a {
     background-size: 200px;
@@ -2426,7 +2426,7 @@ body#collage .cats_music {
     color: #757AAB;
   }
   #userinfo_minor::before {
-    background: url("/static/svg/std/chevrons-down-ccc.svg") no-repeat;
+    background: url("https://simurg.world/static/svg/std/chevrons-down-ccc.svg") no-repeat;
     filter: brightness(200%); /* force white */
     background-size: 28px;
     background-position: center;
@@ -2500,7 +2500,7 @@ body#collage .cats_music {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-image: url("/static/svg/std/menu-ccc.svg");
+  background-image: url("https://simurg.world/static/svg/std/menu-ccc.svg");
   background-size: 30px;
   background-origin: padding-box;
   background-clip: border-box;
@@ -2846,7 +2846,7 @@ tr.snatched_torrent div.tags::before {
 }
 
 .alertbar:first-of-type {
-  background-image: url("/static/svg/site/ops-icon-harp-ccc.svg");
+  background-image: url("https://simurg.world/static/svg/site/ops-icon-harp-ccc.svg");
   background-position: 8px center;
   background-repeat: no-repeat;
   background-size: 32px;
@@ -2876,7 +2876,7 @@ tr.snatched_torrent div.tags::before {
 /* occurs on failure, for example failed request votes */
 .error_message {
   background-color: #633;
-  background-image: url("/static/svg/site/ops-icon-triangle-ccc.svg");
+  background-image: url("https://simurg.world/static/svg/site/ops-icon-triangle-ccc.svg");
   background-position: 8px;
   background-repeat: no-repeat;
   background-size: 32px;
@@ -2933,7 +2933,7 @@ ul#check.nobullet > * {
   border: thick solid #daa520;
   padding: 1rem 1rem 1rem 48px;
   background: hsl(183, 2.5%, 92%);
-  background-image: url("/static/svg/site/ops-icon-triangle-000.svg");
+  background-image: url("https://simurg.world/static/svg/site/ops-icon-triangle-000.svg");
   background-repeat: no-repeat;
   background-position: 8px center;
   background-size: 32px;
@@ -2977,7 +2977,7 @@ ul#check::after {
   border-radius: 0.25rem;
   padding: 1rem 1rem 1rem 48px;
   background-color: hsl(183, 2.5%, 92%);
-  background-image: url("/static/svg/site/ops-icon-triangle-000.svg");
+  background-image: url("https://simurg.world/static/svg/site/ops-icon-triangle-000.svg");
   background-repeat: no-repeat;
   background-position: 8px center;
   background-size: 32px;
@@ -3594,7 +3594,7 @@ Documentation of mobile classes:
   .td_snatched.m_td_right::before,
   .td_seeders.m_td_right::before,
   .td_leechers.m_td_right::before {
-    background: left/10px no-repeat url("/static/svg/std/arrow-loop-ccc.svg");
+    background: left/10px no-repeat url("https://simurg.world/static/svg/std/arrow-loop-ccc.svg");
     color: #DBC8D5;
     content: ":";
     filter: brightness(80%);
@@ -3604,10 +3604,10 @@ Documentation of mobile classes:
     width: 14px;
   }
   .td_seeders.m_td_right::before {
-    background-image: url("/static/svg/std/arrow-up-round-ccc.svg");
+    background-image: url("https://simurg.world/static/svg/std/arrow-up-round-ccc.svg");
   }
   .td_leechers.m_td_right::before {
-    background-image: url("/static/svg/std/arrow-down-round-ccc.svg");
+    background-image: url("https://simurg.world/static/svg/std/arrow-down-round-ccc.svg");
   }
   .m_table.checkboxes td:first-child {
     display: block;
@@ -4139,7 +4139,7 @@ Documentation of mobile classes:
   }
   #mobile-menu-toggle {
     appearance: none;
-    background: transparent url("/static/svg/std/chevrons-down-ccc.svg") center/25px 25px no-repeat;
+    background: transparent url("https://simurg.world/static/svg/std/chevrons-down-ccc.svg") center/25px 25px no-repeat;
     border: 0;
     cursor: pointer;
     display: block;
@@ -4259,7 +4259,7 @@ Documentation of mobile classes:
   }
   #logo a {
     display: inline-block;
-    background: url("/static/svg/site/ops-logo-loop-darkmode.svg") center no-repeat;
+    background: url("https://simurg.world/static/svg/site/ops-logo-loop-darkmode.svg") center no-repeat;
     background-size: var(--row-height);
     height: var(--row-height);
     width: var(--row-height);
