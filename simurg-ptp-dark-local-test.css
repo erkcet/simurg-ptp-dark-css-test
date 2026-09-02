@@ -5592,10 +5592,58 @@ textarea {
     outline: none;
   }
 
+  /*
+   * Simurg loads an external stylesheet before parts of its selected theme.
+   * These two-ID selectors deliberately outrank the theme's generic
+   * `#userinfo ul` and `#userinfo li` rules without relying on !important.
+   */
+  #userinfo #userinfo_major {
+    display: flex;
+    position: absolute;
+    right: 126px;
+    top: 0;
+  }
+
+  #userinfo #userinfo_stats {
+    display: flex;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  #userinfo #userinfo_username {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 0;
+  }
+
+  #userinfo #userinfo_major > li {
+    display: block;
+    position: static;
+  }
+
+  #userinfo #userinfo_stats > li {
+    display: flex;
+    position: static;
+  }
+
+  #userinfo #userinfo_username > li,
+  #userinfo #userinfo_minor > li {
+    display: block;
+    position: relative;
+  }
+
+  #userinfo #userinfo_username > #nav_userclass {
+    display: none;
+  }
+
   /* Account links belong to the username dropdown, not the utility menu. */
   #userinfo_minor #nav_userinfo,
   #userinfo_minor #nav_useredit,
-  #userinfo_minor #nav_logout {
+  #userinfo_minor #nav_logout,
+  #userinfo #userinfo_minor > .mobile-menu-only {
     display: none;
   }
 }
