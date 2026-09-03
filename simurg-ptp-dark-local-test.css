@@ -5460,3 +5460,509 @@ textarea {
     width: 100%;
   }
 }
+
+/* ========================================================================
+   PTP RETRO COMPATIBILITY LAYER
+   ------------------------------------------------------------------------
+   PTP currently serves its Retro theme. This layer recreates its burgundy
+   palette, compact surfaces, borders, controls, and interaction states using
+   original CSS only. It deliberately does not import PTP artwork or alter
+   Simurg markup. The stable two-row Simurg utility header remains because its
+   larger native link set cannot fit PTP's single-row menu robustly.
+   ======================================================================== */
+
+:root {
+  --ptp-black: #3c0001;
+  --ptp-page: #670001;
+  --ptp-row: #670001;
+  --ptp-row-alt: #3d0001;
+  --ptp-panel: #3c0001;
+  --ptp-line: #a0000e;
+  --ptp-input: #3c0002;
+  --ptp-muted: #c8c8c8;
+  --ptp-link: #c5c5c5;
+  --ptp-gradient: linear-gradient(to bottom, #8a0005 0%, #5a0002 46%, #310001 100%);
+  --ptp-gradient-dark: linear-gradient(to bottom, #5d0003 0%, #3c0001 52%, #240001 100%);
+}
+
+html,
+body {
+  background-color: var(--ptp-page);
+}
+
+body {
+  background-image:
+    linear-gradient(to bottom, rgba(20, 0, 0, 0.08), rgba(20, 0, 0, 0.35) 280px, transparent 520px),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 12px);
+  color: #fff;
+}
+
+/* Keep the Simurg masthead while giving its surrounding area Retro depth. */
+#header {
+  background: linear-gradient(to bottom, #520001 0%, #670001 72%, #570001 100%);
+}
+
+#header > .site_name {
+  background: transparent;
+}
+
+#menu {
+  background: var(--ptp-panel);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+#menu > ul a,
+#menu > ul > #nav_staff > a {
+  color: var(--ptp-link);
+}
+
+#menu > ul a:hover,
+#menu > ul a:focus-visible,
+#menu > ul > #nav_staff > a:hover,
+#menu > ul > #nav_staff > a:focus-visible {
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+}
+
+#searchbars > ul {
+  background: var(--ptp-gradient-dark);
+  border-radius: 0;
+  padding: 4px;
+}
+
+#searchbars .search_form input,
+#searchbars > ul input {
+  background: #3c0002;
+  border: 1px solid #790008;
+  border-radius: 5px;
+  color: #c8c8c8;
+  height: 18px;
+  padding: 0 5px;
+  top: auto;
+  width: 118px;
+}
+
+#searchbars .search_form input:hover {
+  border-color: var(--ptp-line);
+}
+
+#searchbars .search_form input:focus {
+  background: #500002;
+  border-color: #d00016;
+  color: #fff;
+  outline: none;
+}
+
+#content {
+  background: var(--ptp-panel);
+}
+
+#alerts,
+#freeleech-events {
+  background: var(--ptp-panel);
+}
+
+.alertbar {
+  background: var(--ptp-row);
+  border-color: var(--ptp-line);
+}
+
+/* Common Gazelle surfaces shared by home, catalogue, requests, and forms. */
+.box,
+.box2,
+.sidebar .box,
+.main_column .box,
+.main_column .box2,
+.panel,
+form,
+table,
+.torrent_table,
+.forum_post,
+.forum_index,
+.request_table,
+.collage_table,
+.profileinfo,
+.settings_sidebar,
+#settings_sections {
+  background-color: var(--ptp-row);
+  border-color: var(--ptp-line);
+}
+
+.box .head,
+.box2 .head,
+.head,
+.colhead,
+.colhead_dark,
+thead,
+thead tr,
+.forum-category-header,
+.settings_sidebar .head,
+#settings_sections .head {
+  background: var(--ptp-gradient-dark);
+  border-color: var(--ptp-line);
+  color: #fff;
+}
+
+.rowa,
+.rowb,
+.rowa:nth-child(odd),
+.rowb:nth-child(odd),
+tbody > tr:nth-child(odd):not(.colhead):not(.colhead_dark),
+.torrent_table tr.group,
+.forum_post > tbody > tr:not(.colhead_dark) {
+  background-color: var(--ptp-row);
+}
+
+.rowa:nth-child(even),
+.rowb:nth-child(even),
+tbody > tr:nth-child(even):not(.colhead):not(.colhead_dark),
+.torrent_table tr.group_torrent,
+.torrent_table tr.edition,
+.forum_post > tbody > tr:nth-child(even):not(.colhead_dark) {
+  background-color: var(--ptp-row-alt);
+}
+
+td,
+th,
+.box,
+.box2,
+.panel,
+.forum_post,
+.forum_post td,
+.torrent_table td,
+.torrent_table th {
+  border-color: var(--ptp-line);
+}
+
+blockquote,
+.quote,
+.code,
+pre,
+.movie-page__torrent__panel,
+.torrent_details,
+.torrentdetails,
+.release_description,
+.preview_wrap {
+  background: var(--ptp-panel);
+  border-color: var(--ptp-line);
+  color: #fff;
+}
+
+blockquote,
+.quote,
+.code,
+pre {
+  border-style: dashed;
+  border-width: 1px;
+}
+
+/* Match Retro controls, including stable hover, focus, and disabled states. */
+button,
+input,
+select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"] {
+  background-color: var(--ptp-input);
+  border: 1px solid var(--ptp-line);
+  color: #fff;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  background-color: var(--ptp-input);
+  border: 1px solid var(--ptp-line);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover {
+  background-color: #222;
+  border-color: var(--ptp-line);
+  color: #fff;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 1px solid #ff4f61;
+  outline-offset: 1px;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  background-color: #404040;
+  color: #aaa;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+option,
+optgroup {
+  background: var(--ptp-input);
+  color: #fff;
+}
+
+/* Preserve semantic status colors while removing the former pink accent. */
+.important_text,
+.warning,
+.error,
+.invalid,
+.torrent_reported,
+.r00 {
+  color: #ff3232;
+}
+
+.success,
+.valid,
+.r50,
+.r99 {
+  color: #20b83e;
+}
+
+.selected,
+.highlight,
+tr.selected,
+tr.highlighted,
+.torrent_table tr:hover,
+.forum_index tr:hover,
+.request_table tr:hover,
+.collage_table tr:hover {
+  background-color: #780000;
+  color: #fff;
+}
+
+.torrent_table tr:hover a,
+.forum_index tr:hover a,
+.request_table tr:hover a,
+.collage_table tr:hover a {
+  color: #fff;
+}
+
+/* Profile and settings retain their verified page-specific geometry. */
+#user .profileinfo,
+#user .sidebar .box,
+#user #userform > .settings_sidebar,
+#user #userform > .main_column,
+#user #settings_sections {
+  background-color: var(--ptp-row);
+  border-color: var(--ptp-line);
+}
+
+#user .box_image_avatar img {
+  border: 1px solid var(--ptp-line);
+  background: var(--ptp-panel);
+  padding: 3px;
+}
+
+/* Invite and upload/editor pages need room for their full-width controls. */
+#user #content > .thin:has(.invite_table),
+#upload #content > .thin,
+#requests #content > .thin,
+#collages #content > .thin,
+#rules #content > .thin,
+#wiki #content > .thin {
+  min-width: 0;
+  width: 100%;
+}
+
+.invite_table,
+.invite_table input,
+#upload form,
+#upload textarea,
+#requests form,
+#collages form {
+  max-width: 100%;
+}
+
+/* The read/unread topic identifier stays intentionally absent. */
+#forums .forum_index tr > td:first-child,
+#forums .forum_index .td_read {
+  display: none;
+}
+
+#forums .forum_index,
+#forums .forum-category,
+#forums .forum-card,
+#forums .forum-unread-row,
+#forums .forum_post,
+#forums .forum-post-article,
+#forums .forum-post-footer {
+  border-color: var(--ptp-line);
+}
+
+#forums .forum-category-header,
+#forums .forum_index .colhead,
+#forums .forum_post .colhead_dark {
+  background: var(--ptp-gradient-dark);
+}
+
+#forums .forum-card:nth-child(odd),
+#forums .forum-unread-row:nth-child(odd) {
+  background: var(--ptp-row);
+}
+
+#forums .forum-card:nth-child(even),
+#forums .forum-unread-row:nth-child(even) {
+  background: var(--ptp-row-alt);
+}
+
+/* Recolor the resilient header without restoring fragile hover flyouts. */
+@media (min-width: 1014px) {
+  #userinfo {
+    background: var(--ptp-gradient);
+    border-bottom-color: var(--ptp-line);
+    box-shadow: 0 2px 7px rgba(30, 0, 0, 0.65);
+  }
+
+  #userinfo #userinfo_minor {
+    border-top-color: rgba(255, 255, 255, 0.12);
+  }
+
+  #userinfo #userinfo_major > li > a,
+  #userinfo #userinfo_stats > li > a,
+  #userinfo #userinfo_username > li > a,
+  #userinfo #userinfo_minor > li > a {
+    color: #ddd;
+  }
+
+  #userinfo #userinfo_major > li > a:hover,
+  #userinfo #userinfo_stats > li > a:hover,
+  #userinfo #userinfo_username > li > a:hover,
+  #userinfo #userinfo_minor > li > a:hover,
+  #userinfo #userinfo_major > li > a:focus-visible,
+  #userinfo #userinfo_stats > li > a:focus-visible,
+  #userinfo #userinfo_username > li > a:focus-visible,
+  #userinfo #userinfo_minor > li > a:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    outline-color: #ff4f61;
+  }
+
+  #userinfo #userinfo_username > #nav_userinfo > a {
+    background: rgba(60, 0, 1, 0.55);
+  }
+}
+
+@media (max-width: 1013px) {
+  #header,
+  #userinfo,
+  #menu,
+  #searchbars > ul,
+  #content {
+    border-radius: 0;
+  }
+
+  #index #content > .thin:last-child,
+  #user #content > .thin:last-child,
+  #user #userform {
+    display: block;
+  }
+
+  #index #content > .thin:last-child > .sidebar,
+  #index #content > .thin:last-child > .main_column,
+  #user #content > .thin:last-child > .sidebar,
+  #user #content > .thin:last-child > .main_column,
+  #user #userform > .settings_sidebar,
+  #user #userform > .main_column {
+    margin: 0 0 10px;
+    width: 100%;
+  }
+
+  #header.mobile-menu-open {
+    background: var(--ptp-page);
+    border-bottom-color: var(--ptp-line);
+    box-shadow: 0 50px 70px rgba(60, 0, 1, 0.8), 0 160px 160px #080808;
+  }
+
+  #extra4,
+  #userinfo_username > li,
+  #logo,
+  #header .site_name,
+  #header #menu ul,
+  #header #userinfo_minor {
+    background: var(--ptp-gradient) !important;
+  }
+
+  #header a,
+  #extra5,
+  #userinfo_stats {
+    color: #fff;
+  }
+
+  #mobile-menu-toggle:focus-visible {
+    outline-color: #ff4f61;
+  }
+}
+
+/* Pop-up notifications and autocomplete results appear on many page types. */
+#alerts {
+  border-color: var(--ptp-line);
+}
+
+.alertbar,
+.sys_error,
+.save_message {
+  background-color: var(--ptp-row) !important;
+  color: #fff !important;
+}
+
+.alertbar:first-of-type {
+  background-image: none;
+  padding-left: 10px;
+}
+
+.alertbar a,
+.sys_error a,
+.save_message a {
+  color: var(--ptp-link) !important;
+}
+
+#noty_bottomRight_layout_container > li {
+  border-color: var(--ptp-line) !important;
+}
+
+#noty_bottomRight_layout_container .noty_message {
+  background: var(--ptp-gradient) !important;
+  color: #fff !important;
+}
+
+#noty_bottomRight_layout_container .noty_buttons {
+  background: var(--ptp-panel) !important;
+}
+
+#noty_bottomRight_layout_container .noty_buttons a {
+  color: var(--ptp-link) !important;
+}
+
+.autocomplete-suggestions {
+  background: var(--ptp-panel) !important;
+  border-color: var(--ptp-line) !important;
+}
+
+.autocomplete-suggestions .autocomplete-suggestion {
+  color: var(--ptp-link) !important;
+}
+
+.autocomplete-suggestions .autocomplete-suggestion strong {
+  color: #fff !important;
+}
+
+.autocomplete-suggestions .autocomplete-suggestion.autocomplete-selected {
+  background: #780000 !important;
+}
