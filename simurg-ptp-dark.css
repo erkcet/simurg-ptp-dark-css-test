@@ -5469,7 +5469,9 @@ textarea {
    page in the PTP Dark system without changing Simurg's native markup.
    ======================================================================== */
 
-#collage #content > .thin {
+/* Limit the single-column correction to the browse view. Collage detail pages
+   use the same body ID but need their native main-column/sidebar flex layout. */
+#collage #content > .thin:has(> div > .search_form) {
   display: block;
   min-width: 0;
   width: 100%;
@@ -5594,19 +5596,25 @@ textarea {
   width: auto;
 }
 
-#collage .collage_table .td_info .tags a,
-#collage .collage_table .td_info .tags :not(:empty) {
+#collage .collage_table .td_info .tags a:not(:empty) {
   background: #494848 !important;
   border: 1px solid #666 !important;
   color: var(--ptp-link) !important;
 }
 
-#collage .collage_table .td_info .tags a:hover,
-#collage .collage_table .td_info .tags a:focus-visible {
+#collage .collage_table .td_info .tags a:not(:empty):hover,
+#collage .collage_table .td_info .tags a:not(:empty):focus-visible {
   background: #5c5c5c !important;
   border-color: #8a8a8a !important;
   box-shadow: none;
   color: #fff !important;
+}
+
+/* Some legacy collage rows render an empty tag anchor. Remove the entire tag
+   line unless it contains at least one real tag so no empty bordered pill is
+   left underneath the collage title. */
+#collage .collage_table .td_info .tags:not(:has(> a:not(:empty))) {
+  display: none !important;
 }
 
 #collage .collage_table tr:not(.colhead):hover {
