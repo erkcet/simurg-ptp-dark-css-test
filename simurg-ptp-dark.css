@@ -5460,3 +5460,175 @@ textarea {
     width: 100%;
   }
 }
+
+/* ========================================================================
+   COLLAGE BROWSE COMPATIBILITY
+   ------------------------------------------------------------------------
+   ApolloStage gives the collage filter, tag links, and staff alerts more
+   specific purple accent rules than its generic forms and tables. Keep this
+   page in the PTP Dark system without changing Simurg's native markup.
+   ======================================================================== */
+
+#collage #content > .thin {
+  display: block;
+  min-width: 0;
+  width: 100%;
+}
+
+#collage #alerts {
+  border-color: var(--ptp-line);
+}
+
+#collage .alertbar,
+#collage .sys_error,
+#collage .save_message {
+  background-color: var(--ptp-row);
+  color: #fff !important;
+}
+
+#collage .alertbar:first-of-type {
+  background-image: none;
+  padding-left: 10px;
+}
+
+#collage .search_form {
+  background: transparent;
+  margin: 8px 0;
+  overflow: visible;
+  width: 100%;
+}
+
+#collage .search_form > div,
+#collage .search_form table.layout {
+  width: 100%;
+}
+
+#collage .search_form table.layout {
+  background: var(--ptp-row);
+  border: 1px solid var(--ptp-line);
+  table-layout: auto;
+}
+
+#collage .search_form table.layout tr,
+#collage .search_form table.layout tr:nth-child(odd),
+#collage .search_form table.layout tr:nth-child(even) {
+  background: var(--ptp-row);
+}
+
+#collage .search_form table.layout td {
+  border-color: var(--ptp-line);
+  padding: 6px;
+  vertical-align: middle;
+}
+
+#collage .search_form table.layout td.label {
+  white-space: nowrap;
+  width: 155px;
+}
+
+#collage #search_terms input[type="search"],
+#collage #tagfilter input[type="text"],
+#collage .search_form select {
+  background: #212121;
+  border: 1px solid #3a3c3f;
+  color: var(--ptp-muted);
+}
+
+#collage #search_terms input[type="search"],
+#collage #tagfilter input[type="text"] {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 500px;
+}
+
+#collage #search_terms input[type="search"]:focus,
+#collage #tagfilter input[type="text"]:focus,
+#collage .search_form select:focus {
+  background: #2c2c2c;
+  border-color: #777;
+  color: #fff;
+  outline: 1px solid #999;
+  outline-offset: 1px;
+}
+
+#collage #categories .cat-choice {
+  display: inline-block;
+  line-height: 22px;
+  min-width: 17%;
+  white-space: nowrap;
+}
+
+#collage #cat-all,
+#collage #cat-none,
+#collage #cat-invert {
+  display: inline-block;
+  padding: 2px 4px;
+}
+
+#collage .collage_table {
+  background: var(--ptp-row);
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+}
+
+#collage .collage_table .colhead {
+  background: var(--ptp-gradient);
+}
+
+#collage .collage_table .rowa {
+  background: var(--ptp-row);
+}
+
+#collage .collage_table .rowb {
+  background: var(--ptp-row-alt);
+}
+
+#collage .collage_table td {
+  border-top: 1px solid var(--ptp-line);
+  padding: 5px;
+  vertical-align: middle;
+}
+
+#collage .collage_table .td_info {
+  width: auto;
+}
+
+#collage .collage_table .td_info .tags a,
+#collage .collage_table .td_info .tags :not(:empty) {
+  background: #494848 !important;
+  border: 1px solid #666 !important;
+  color: var(--ptp-link) !important;
+}
+
+#collage .collage_table .td_info .tags a:hover,
+#collage .collage_table .td_info .tags a:focus-visible {
+  background: #5c5c5c !important;
+  border-color: #8a8a8a !important;
+  box-shadow: none;
+  color: #fff !important;
+}
+
+#collage .collage_table tr:not(.colhead):hover {
+  background: #4b4b4b;
+}
+
+@media (max-width: 700px) {
+  #collage .search_form table.layout,
+  #collage .search_form table.layout tbody,
+  #collage .search_form table.layout tr,
+  #collage .search_form table.layout td {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+  }
+
+  #collage .search_form table.layout td.label {
+    padding-bottom: 0;
+    text-align: left;
+  }
+
+  #collage #categories .cat-choice {
+    min-width: 48%;
+  }
+}
