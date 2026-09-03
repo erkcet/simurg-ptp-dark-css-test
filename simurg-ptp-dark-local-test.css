@@ -5165,6 +5165,16 @@ textarea {
 }
 
 /*
+ * The invite page also uses body#user, but it has a single-column document
+ * flow rather than profile sidebar markup. Keep its notice, invite form, and
+ * invitee table at full width so form controls and the BBCode toolbar do not
+ * collapse into the profile grid's narrow sidebar column.
+ */
+#user #content > .thin:has(.invite_table) {
+  display: block;
+}
+
+/*
  * The Settings page shares body#user with profile pages, but its columns live
  * inside #userform. Restore the full content width before laying out the form
  * so the profile grid cannot squeeze the settings table or collapse its menu.
