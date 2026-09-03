@@ -5838,3 +5838,63 @@ body#artist #content .thin:last-child > .sidebar {
     grid-row: 3;
   }
 }
+
+/* ========================================================================
+   REQUEST DETAIL PAGE COMPATIBILITY
+   ------------------------------------------------------------------------
+   Request detail pages use a cover-and-metadata sidebar followed by the
+   bounty, fill, description, and comment content. Restore that established
+   Gazelle/PTP reading order without changing the request browse tables.
+   ======================================================================== */
+
+body#requests #content .thin:last-child:has(> .sidebar):has(> .main_column) {
+  align-items: start;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr);
+  margin: 0;
+  width: 100%;
+}
+
+body#requests #content .thin:last-child:has(> .sidebar):has(> .main_column) > .header {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+body#requests #content .thin:last-child:has(> .sidebar):has(> .main_column) > .sidebar {
+  float: none;
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
+  order: initial;
+  width: auto;
+}
+
+body#requests #content .thin:last-child:has(> .sidebar):has(> .main_column) > .main_column {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  width: auto;
+}
+
+body#requests .sidebar .box_image img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 700px) {
+  body#requests #content .thin:last-child:has(> .sidebar):has(> .main_column) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body#requests #content .thin:last-child:has(> .sidebar):has(> .main_column) > .sidebar {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  body#requests #content .thin:last-child:has(> .sidebar):has(> .main_column) > .main_column {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
