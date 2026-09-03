@@ -5791,9 +5791,10 @@ textarea {
    ------------------------------------------------------------------------
    Artist pages combine a publication catalogue with several compact tools.
    Keep the catalogue in the main column and the tools in a stable sidebar.
+   Require both columns so artist edit forms retain their native document flow.
    ======================================================================== */
 
-body#artist #content .thin:last-child {
+body#artist #content .thin:last-child:has(> .sidebar):has(> .main_column) {
   align-items: start;
   display: grid;
   gap: 8px;
@@ -5802,19 +5803,19 @@ body#artist #content .thin:last-child {
   width: 100%;
 }
 
-body#artist #content .thin:last-child > .header {
+body#artist #content .thin:last-child:has(> .sidebar):has(> .main_column) > .header {
   grid-column: 1 / -1;
   width: 100%;
 }
 
-body#artist #content .thin:last-child > .main_column {
+body#artist #content .thin:last-child:has(> .sidebar):has(> .main_column) > .main_column {
   grid-column: 1;
   grid-row: 2;
   min-width: 0;
   width: auto;
 }
 
-body#artist #content .thin:last-child > .sidebar {
+body#artist #content .thin:last-child:has(> .sidebar):has(> .main_column) > .sidebar {
   float: none;
   grid-column: 2;
   grid-row: 2;
@@ -5824,16 +5825,16 @@ body#artist #content .thin:last-child > .sidebar {
 }
 
 @media (max-width: 700px) {
-  body#artist #content .thin:last-child {
+  body#artist #content .thin:last-child:has(> .sidebar):has(> .main_column) {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  body#artist #content .thin:last-child > .sidebar {
+  body#artist #content .thin:last-child:has(> .sidebar):has(> .main_column) > .sidebar {
     grid-column: 1;
     grid-row: 2;
   }
 
-  body#artist #content .thin:last-child > .main_column {
+  body#artist #content .thin:last-child:has(> .sidebar):has(> .main_column) > .main_column {
     grid-column: 1;
     grid-row: 3;
   }
