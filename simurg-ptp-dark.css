@@ -5621,7 +5621,54 @@ textarea {
   background: #4b4b4b;
 }
 
+/* Collage detail pages share the browse page's body ID. Give them an explicit
+   PTP-style content/sidebar grid so long descriptions and statistics do not
+   expand into a stack of full-width panels above the publication list. */
+#collage #content > .thin:has(> .sidebar):has(> .main_column) {
+  align-items: start;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 3fr) minmax(240px, 1fr);
+  margin: 0;
+  width: 100%;
+}
+
+#collage #content > .thin:has(> .sidebar):has(> .main_column) > .header {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+#collage #content > .thin:has(> .sidebar):has(> .main_column) > .main_column {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
+  width: auto;
+}
+
+#collage #content > .thin:has(> .sidebar):has(> .main_column) > .sidebar {
+  float: none;
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  order: initial;
+  width: auto;
+}
+
 @media (max-width: 700px) {
+  #collage #content > .thin:has(> .sidebar):has(> .main_column) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #collage #content > .thin:has(> .sidebar):has(> .main_column) > .sidebar {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #collage #content > .thin:has(> .sidebar):has(> .main_column) > .main_column {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
   #collage .search_form table.layout,
   #collage .search_form table.layout tbody,
   #collage .search_form table.layout tr,
