@@ -5732,3 +5732,56 @@ textarea {
     min-width: 48%;
   }
 }
+
+/* ========================================================================
+   WIKI ARTICLE COMPATIBILITY
+   ------------------------------------------------------------------------
+   Wiki articles should keep their navigation and metadata in a compact
+   sidebar instead of stacking every panel above the article body.
+   ======================================================================== */
+
+#wiki #content > .thin:has(> .sidebar):has(> .main_column) {
+  align-items: start;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(0, 3fr) minmax(240px, 1fr);
+  margin: 0;
+  width: 100%;
+}
+
+#wiki #content > .thin:has(> .sidebar):has(> .main_column) > .header {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+#wiki #content > .thin:has(> .sidebar):has(> .main_column) > .main_column {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
+  width: auto;
+}
+
+#wiki #content > .thin:has(> .sidebar):has(> .main_column) > .sidebar {
+  float: none;
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+  order: initial;
+  width: auto;
+}
+
+@media (max-width: 700px) {
+  #wiki #content > .thin:has(> .sidebar):has(> .main_column) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #wiki #content > .thin:has(> .sidebar):has(> .main_column) > .sidebar {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #wiki #content > .thin:has(> .sidebar):has(> .main_column) > .main_column {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
